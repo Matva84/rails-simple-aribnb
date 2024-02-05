@@ -1,0 +1,32 @@
+<div class="container">
+<h1>All our flats (<%= @flats.length %>)</h1>
+
+  <div class="cards">
+    <% @flats.each do |flat| %>
+
+      <div class="card" style="width: 18rem;">
+        <img src=<%= flat.picture_url %> class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= flat.address %></li>
+          <li class="list-group-item">
+          <i class="fa-solid fa-person"></i><%= flat.number_of_guests %>
+          <i class="fa-solid fa-euro-sign left_padding"></i> <%= flat.price_per_night %></li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link text-deco-none">
+            <%= link_to "More info", flat, class: 'right_padding'%>
+          </a>
+          <a href="#" class="card-link link-yellow text-deco-none">
+            <%= link_to "Edit", edit_flat_path(flat), class: 'link-yellow right_padding'%>
+          </a>
+          <a href="#" class="card-link link-red text-deco-none">
+            <%= link_to "Delete", flat, class: 'link-red right_padding',data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this flat ?"}%>
+          </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

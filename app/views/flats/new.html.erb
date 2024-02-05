@@ -1,0 +1,13 @@
+<H1>Create a new flat</H1>
+
+<%= form_with model: @flat do |f| %>
+  <%= f.label "Lovely name :"%>
+  <%= f.text_field :name %>
+  <%= f.label "Location :" %>
+  <%= f.text_field :address %>
+  <%= f.label "number of guests :" %>
+  <%= f.number_field :number_of_guests %>
+  <%= f.label "Price per night :" %>
+  <%= f.number_field :price_per_night %>
+  <%= f.submit %>
+<% end %>

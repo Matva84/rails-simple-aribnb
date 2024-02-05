@@ -1,0 +1,44 @@
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+<%= javascript_importmap_tags %>
+
+
+
+<div class="banner">
+  <img src=<%= @flat.picture_url %> alt="">
+</div>
+
+<div class="show_container">
+
+  <div class="infos_container">
+    <div class="row">
+
+      <div class="col col-lr-2 right">
+          <div class="description">
+            <h2><%= @flat.name %></h2>
+            <h3 id="address"><%= @flat.address %></h3>
+          </div>
+          <div class="map_desc">
+            <h1>A bit more about this flat...</h1>
+            <div id="map" style="height: 300px; width: 600px"></div>
+          </div>
+          </div>
+      </div>
+
+      <div class="col-md-auto">
+      </div>
+
+      <div class="col col-lg-2">
+        <p><%= @flat.number_of_guests %></p>
+        <p><%= @flat.price_per_night %></p>
+      </div>
+
+
+    </div>
+
+    <%= link_to "<< Back to results", flats_path %>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+
+</div>
